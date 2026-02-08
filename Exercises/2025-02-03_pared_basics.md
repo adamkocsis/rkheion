@@ -23,7 +23,7 @@ Youi will use a subset of this database to look at the main reef builders and th
 
 > Every row represents one reef site, that has a name (`NAME`), formation (`FORMATION`) and some stratigraphic data (`SYSTEM`, `SERIES`, `INTERVAL`). The present-day geographical coordinates are in the `LON` and `LAT` columns. Reconstructed paleocoordinates (where the reefs were present in the past based on the PALEOMAP tectonic model) are in the `PALEO-LAT` and `PALEO-LON` columns. 
 
-**3.** Where are these ancient reef sites today? Plot the distribution of reef occurrences on a present-day map! You can do this in any way you like - if you do not have a better idea, you can use NaturalEarth polygons from the chronosphere package as have done it earlier:
+**3.** Where are these ancient reef sites today? Plot the distribution of reef occurrences on a present-day map! You can do this in any way you like - if you do not have a better idea, you can use the NaturalEarth land polygons from the chronosphere package as have done it earlier:
 
 ```r
 # if you need to install something
@@ -37,13 +37,13 @@ plot(ne$geometry, col="gray", border=NA)
 
 **4.** Tabulate the number of reef sites per country! How many countries have reef records? Which country has the highest number of ancient reef sites? (a *numeric* and a *character* value)
 
-**5.** Create a subset for the Cambrian system! In this subset, what were the main reef builder groups? Which entry occurs most frequently? (*character vector* and a single *character* value - there some entries that are not given!)
+**5.** Create a subset for the Cambrian system! In this subset, what were the main reef builder groups? Which entry occurs most frequently? (*character vector* and a single *character* value - there are some entries that are not given!)
 
 **6.** Create a subset of the overall reef dataset for those reefs where the main reef builders (column `BIOTA.MAIN`) are `Corals`! Use this subset for the subsequent analyses!
 
 > Temperature has a huge effect on the latitudinal distribution of coral reefs. We know that climate has been much warmer in the mesozoic, and it has been getting cooler for the past couple dozen millions of years. This means that coral reef sites should draw nearer to the equator in general (e.g. their paleolatitude should be decreasing). To assess this, we have to calculate how far away from the equator we find reef sites (at their past geographic positions). To get an average of this, we can use to the absolute values of the latitudes (which mirrors the southern hemisphere, negative latitude values to the northern hemisphere), and we can calculate their median, and analyze how this changes through time.
 
-**7.** Make a subset of the overall coral dataset, that come from the `"Jurassic"` system! How many coral reef sites are there? In this subset, calculate the median of the absolute **paleolatitude** of the reef sites! (a two *numeric* values)
+**7.** Make a subset of the overall coral dataset, that come from the `"Jurassic"` system! How many coral reef sites are there in the Jurassic? In this subset, calculate the median of the absolute **paleolatitude** of the reef sites! (a two *numeric* values)
 
 **8.** Using a for loop, repeat step 7 for all systems in the dataset, so we know the median absolute paleolatitude of reef sites in all systems! (*named numeric vector*). 
 
