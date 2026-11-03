@@ -57,7 +57,7 @@ estimate
 You can also add a line to print the value of `estimate` in every iteration. 
 
 ```R
-<- 15
+n <- 15
 
 # initialization
 count <- 0
@@ -95,6 +95,42 @@ estimate
 **Run this bit of code manually at least once! (manually running the block)**
 
 Note that it is a bit difficult to see how this value changes from this kind of console print. For a more detailed assessment, we have to use a different kind of output. We either need to plot our results, or we have to save every value in an object. 
+
+
+## Estimating to a certain number of digits
+
+The true power of `while` loops is that you can define the iteration of calculations without knowing how many repetitions you need to do. In the context of estimating something, we might need to reach a certain level of precision before stopping. This we can assess based on how much the result changes compared to the result of the previous iteration. If this is difference (usually an absolute difference, in the case of the Euler number, we are approaching the true number from below) is lower than a pre-defined `epsilon` value, you stop. This is the condition that is put into the hile loop.
+
+
+```R
+# the precision
+epsilon <- 1e-3
+
+# the number of iterations
+count <- 0
+
+# the result, wi
+estimate <- 0
+
+# initialize this to a value lower than estimte
+# wil be updated in every loop
+previous <- -1
+
+# if the difference between the most up to date result is higher than epsilson,
+# the loop has to continue
+while(abs(estimate-previous)> epsilon){
+	# the result of the previous loop is stored for comparison in the next iteration
+	previous <- estimate
+	# the estimate
+	estimate <- estimate + 1 / factorial(count)
+	# display the estimate
+	message(estimate)
+	# loop counter increment
+	count <- count + 1
+}
+estimate
+```
+
 
 # Note about using `while()`
 
