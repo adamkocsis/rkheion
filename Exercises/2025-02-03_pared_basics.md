@@ -43,7 +43,7 @@ plot(ne$geometry, col="gray", border=NA)
 
 > Temperature has a huge effect on the latitudinal distribution of coral reefs. We know that climate has been much warmer in the mesozoic, and it has been getting cooler for the past couple dozen millions of years. This means that coral reef sites should draw nearer to the equator in general (e.g. their paleolatitude should be decreasing). To assess this, we have to calculate how far away from the equator we find reef sites (at their past geographic positions). To get an average of this, we can use to the absolute values of the latitudes (which mirrors the southern hemisphere, negative latitude values to the northern hemisphere), and we can calculate their median, and analyze how this changes through time.
 
-**7.** Make a subset of the overall coral dataset, that come from the `"Jurassic"` system! How many coral reef sites are there in the Jurassic? In this subset, calculate the median of the absolute **paleolatitude** of the reef sites! (a two *numeric* values)
+**7.** Make a subset of the overall coral dataset, that come from the `"Jurassic"` system! How many coral reef sites are there in the Jurassic? In this subset, calculate the median of the absolute **paleolatitude** of the reef sites! (a *numeric* values)
 
 **8.** Using a for loop, repeat step 7 for all systems in the dataset, so we know the median absolute paleolatitude of reef sites in all systems! (*named numeric vector*). 
 
